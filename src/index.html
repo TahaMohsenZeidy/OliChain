@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taba3 Ezitouna</title>
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1 style="color:green;">Suivi et sécurisation de la production d'olive</h1>
+	<div class="btn-group" id="form-selector" style="float: left; top:200px; left: 150px;">
+		<button type="button" class="btn1 btn-selector active" id="sign-up-btn">El falla7</button><br>
+		<button type="button" class="btn1 btn-selector" id="log-in-btn">El Ma3sra</button><br>
+		<button type="button" class="btn1 btn-selector" id="payments-btn">El mostahlek</button><br>		
+	</div>
+	<div class="form" style="background-color:white; color:green; text-align:center" id="sign-up-form">
+		<label>ID</label>
+		<input type="text" class="input-std" id="fid">
+		<label>Esm el falla7</label>
+		<input type="text" class="input-std" id="fname">
+		<label>blaset el ardh</label>
+		<input type="text" class="input-std" id="loc">
+		<label>sa9wi walla ba3li</label>
+		<input type="text" class="input-std" id="crop">
+		<label>Noumrou talifounek ?</label>
+		<input type="text" class="input-std" id="contact">
+		<label>qadech 3andek zitoun ?</label>
+		<input type="text" class="input-std" id="quantity">
+		<label>Essoum ?</label>
+		<input type="text" class="input-std" id="exprice">
+		<button type="button" class="btn1 btn-default" id="setvalue" onclick="set()">Mrigel</button>
+	<span id="status"></span>
+	<h5 style="text-align:center"><span><span id="SenderBalance"></span> </h5>
+	</div>
+  <div class="form" style="background-color:white; color:green; text-align:center" id="log-in-form">
+  <br>
+  <table>  
+  <!-- <tr><td><b><label class = "black">Farmer Id</label></td><td>:</td></b><td><span class="black" span id="getval1"></span></td></tr> -->
+  <label>Falla7 ID</label>
+  <input type="text" class="input-std" id="fid1">
+  <tr><td><b><label >Esm El Falla7</label></td><td>:</td></b><td><span class="black" span id="getval2"></span></td></tr>
+  <tr><td><b><label >Blaset el Ardh</label></td><td>:</td></b><td><span class="black" span id="getval3"></span></td></tr>
+  <tr><td><b><label >type l ardh</label></td><td>:</td></b><td><span class="black" span id="getval4"></span></td></tr>
+  <tr><td><b><label >talifoun El falla7</label></td><td>:</td></b><td><span class="black" span id="getval5"></span></td></tr>
+  <tr><td><b><label >Quantité</label></td><td>:</td></b><td><span class="black" span id="getval6"></span></td></tr>
+  <tr><td><b><label >Soum</label><td>:</td></td></b><td><span class="black" span id="getval7"></span></td></tr>
+  
+  </table>  
+  <button type="button" class="btn1 btn-default" id="getvalue" onclick="get();">Procéder</button>
+     
+  <br><br>
+  
+  <table align="center"> 
+  <tr>
+  <td><button type="button" id="printBlock" class="btn btn-selector" onclick="printBlock()">Block</button></td>
+  <td><button type="button" id="printTransaction" class="btn btn-selector" onclick="printTransaction()">Transaction</button></td></tr>
+  </table> 
+ 
+  <br>
+  <h4><span class="blockclass" span id="blocknum"> </span></h4>
+  <br>
+<button type="button" class="btn1 btn-default" id="Approve-btn" align ="center" font="20px">OK</button>
+  
+
+
+  <span id="status"></span>
+
+ </div>
+	
+
+<div class="form" style="background-color:white; color:green; text-align:center" id="approve-form">
+     <h2 class="form-title">Details Zitou </h2>
+		<label>Numero lot</label>
+		<input type="text" class="input-std" id="lotno" >
+		<label>Grade</label>
+		<input type="text" class="input-std" id="grade" >
+		<label>MRP</label>
+		<input type="text" class="input-std" id="mrp">
+		<label>Date de debut</label>
+		<input type="text" class="input-std" id="testdate" >
+		<label>Date de fin</label>
+		<input type="text" class="input-std" id="expdate">
+		<button type="button" class="btn1 btn-default" id="setvalue" onclick="setQ()">Submit</button>
+		<span id="status"></span>	
+
+  </div>
+  
+  
+  <div class="form" id="payments-form" style="background-color:white; color:green; text-align:center">
+   <h2 class="form-title">Customer</h2>
+  <table>  
+    <label>Falla7 ID</label>
+  <input type="text" class="input-std" id="getfid">
+  <tr><td><b><label >Falla7 Id</label></td><td>:</td></b><td><span  span id="cgetval1"></span></td></tr>
+  <tr><td><b><label >Esm Elfalla7</label></td><td>:</td></b><td><span  span id="cgetval2"></span></td></tr>
+  <tr><td><b><label >blaset l Ardh</label></td><td>:</td></b><td><span span id="cgetval3"></span></td></tr>
+  <tr><td><b><label >Type</label></td><td>:</td></b><td><span span id="cgetval4"></span></td></tr>
+  <tr><td><b><label >talifoun</label></td><td>:</td></b><td><span span id="cgetval5"></span></td></tr>
+  <tr><td><b><label >Quantité</label></td><td>:</td></b><td><span  span id="cgetval6"></span></td></tr>
+  <tr><td><b><label >soum</label><td>:</td></td></b><td><span  span id="cgetval7"></span></td></tr>
+  <label>Numero Lot</label>
+  <input type="text" class="input-std" id="lotnum">
+  <tr><td><b><label >Numero Lot</label><td>:</td></td></b><td><span  span id="cgetval8"></span></td></tr>
+  <tr><td><b><label >note</label><td>:</td></td></b><td><span  span id="cgetval9"></span></td></tr>
+  <tr><td><b><label >MRP</label><td>:</td></td></b><td><span  span id="cgetval10"></span></td></tr>
+  <tr><td><b><label >Test Date</label><td>:</td></td></b><td><span  span id="cgetval11"></span></td></tr>
+  <tr><td><b><label >Date Expiration</label><td>:</td></td></b><td><span span id="cgetval12"></span></td></tr>
+  </table>
+  <button type="button" class="btn1 btn-default" id="getcustval" onclick="getQ();cgetQ();">Get</button>
+  </div>
+
+  <div class="form" id="finance-form">
+		<h2 class="form-title">Micro-Finance</h2>
+		
+
+		<input type="text" class="input-std" id="pfid" placeholder="Farmer Id">
+		<input type="text" class="input-std" id="lotnum" placeholder="Lot Number">
+		<input type="text" class="input-std" id="amount" placeholder="Fund Amount">
+		<table>
+		<tr><td><b><label class = "black">Balance</label></td><td>:</td></b><td><span class="black"><span class="black" span id="balance"></span>$</span></td></tr>
+		
+		</table>
+		<button type="button" class="btn-submit" id="getfund" onclick="fund()">Fund Farmer</button>
+		
+	<span id="status"></span>
+	</div>
+
+
+  
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+ 
+</body>
+</html>
